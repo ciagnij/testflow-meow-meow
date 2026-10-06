@@ -1,6 +1,6 @@
 {
   "name": "testflow-meow-meow",
-  "version": "3.0.0",
+  "version": "3.1.0",
   "private": true,
   "description": "Readable, local-only Testflow browser extension",
   "license": "MIT",

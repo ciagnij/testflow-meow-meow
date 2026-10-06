@@ -7,7 +7,7 @@
   "popupEnable": { "message": "Enable" },
   "popupDisable": { "message": "Disable" },
   "popupReload": { "message": "Reload page after enabling or disabling." },
-  "popupError": { "message": "Could not apply the setting. Try again, or check the extension's error log." },
+  "popupError": { "message": "Could not read or save local settings:" },
   "popupUnavailable": { "message": "Settings unavailable" },
   "popupRetry": { "message": "Retry" }
 }

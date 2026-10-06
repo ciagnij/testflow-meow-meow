@@ -3,21 +3,36 @@
   "name": "__MSG_appName__",
   "description": "__MSG_appDesc__",
   "default_locale": "en",
-  "version": "3.0.0",
-  "minimum_chrome_version": "102",
-  "permissions": ["storage", "scripting"],
-  "host_permissions": [
-    "*://*.testportal.pl/*",
-    "*://*.testportal.net/*",
-    "*://*.wayground.com/*",
-    "*://*.quizizz.com/*"
-  ],
-  "background": { "service_worker": "background.js" },
+  "version": "3.1.0",
+  "permissions": ["storage"],
   "action": {
     "default_popup": "popup.html",
     "default_title": "__MSG_appName__"
   },
   "icons": { "128": "icon128.png" },
+  "content_scripts": [
+    {
+      "matches": ["*://*.testportal.pl/*", "*://*.testportal.net/*", "*://*.wayground.com/*", "*://*.quizizz.com/*"],
+      "js": ["extension-api.js", "content.js"],
+      "run_at": "document_start"
+    },
+    {
+      "matches": ["*://*.testportal.pl/*", "*://*.testportal.net/*"],
+      "js": ["page-control.js", "bypass.js"],
+      "run_at": "document_start",
+      "world": "MAIN"
+    },
+    {
+      "matches": ["*://*.wayground.com/*", "*://*.quizizz.com/*"],
+      "js": ["page-control.js", "wayground-bypass.js"],
+      "run_at": "document_start",
+      "world": "MAIN"
+    }
+  ],
+  "web_accessible_resources": [{
+    "resources": ["page-control.js", "bypass.js", "wayground-bypass.js"],
+    "matches": ["*://*.testportal.pl/*", "*://*.testportal.net/*", "*://*.wayground.com/*", "*://*.quizizz.com/*"]
+  }],
   "content_security_policy": {
     "extension_pages": "script-src 'self'; object-src 'none'; connect-src 'none'"
   }
