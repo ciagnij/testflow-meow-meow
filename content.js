@@ -14,10 +14,13 @@
 
   function onMessage(event) {
     if (event.source !== window || event.data?.channel !== 'testflow-meow-v1' ||
-        event.data.type !== 'ready' || event.data.token !== token) return;
+        !['ready', 'failed'].includes(event.data.type) || event.data.token !== token) return;
     acknowledged = true;
     clearTimeout(timer);
     window.removeEventListener('message', onMessage);
+    if (event.data.type === 'failed') {
+      console.error('[testflow meow meow] Page changes unavailable:', event.data.error);
+    }
   }
 
   function configure(enabled) {
@@ -58,6 +61,11 @@
         await appendScript('page-control.js');
         await appendScript(pageScript);
         configure(true);
+        timer = setTimeout(() => {
+          if (acknowledged) return;
+          window.removeEventListener('message', onMessage);
+          console.error('[testflow meow meow] Page did not confirm setup. Check site access and reload.');
+        }, 1000);
       } catch (error) {
         window.removeEventListener('message', onMessage);
         console.error('[testflow meow meow] Page injection failed:', error);
