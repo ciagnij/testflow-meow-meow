@@ -1,0 +1,13 @@
+{
+  "appName": { "message": "testflow meow meow" },
+  "appDesc": { "message": "Local, open-source page modifications for Testportal, Wayground and Quizizz. No account or activation service." },
+  "popupLoading": { "message": "Loading…" },
+  "popupEnabled": { "message": "Enabled for supported pages" },
+  "popupDisabled": { "message": "Disabled for new page loads" },
+  "popupEnable": { "message": "Enable" },
+  "popupDisable": { "message": "Disable" },
+  "popupReload": { "message": "Reload page after enabling or disabling." },
+  "popupError": { "message": "Could not apply the setting. Try again, or check the extension's error log." },
+  "popupUnavailable": { "message": "Settings unavailable" },
+  "popupRetry": { "message": "Retry" }
+}

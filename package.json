@@ -1,0 +1,12 @@
+{
+  "name": "testflow-meow-meow",
+  "version": "3.0.0",
+  "private": true,
+  "description": "Readable, local-only Testflow browser extension",
+  "license": "MIT",
+  "scripts": {
+    "test": "node --test",
+    "test:browser": "node tests/browser-smoke.cjs"
+  },
+  "engines": { "node": ">=18" }
+}

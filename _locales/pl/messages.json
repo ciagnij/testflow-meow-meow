@@ -1,0 +1,13 @@
+{
+  "appName": { "message": "testflow meow meow" },
+  "appDesc": { "message": "Lokalna wtyczka z otwartym kodem dla Testportal, Wayground i Quizizz. Bez konta i serwera aktywacji." },
+  "popupLoading": { "message": "Wczytywanie…" },
+  "popupEnabled": { "message": "Włączona dla obsługiwanych stron" },
+  "popupDisabled": { "message": "Wyłączona przy kolejnym wczytaniu strony" },
+  "popupEnable": { "message": "Włącz" },
+  "popupDisable": { "message": "Wyłącz" },
+  "popupReload": { "message": "Po włączeniu lub wyłączeniu odśwież stronę." },
+  "popupError": { "message": "Nie udało się zastosować ustawienia. Spróbuj ponownie lub sprawdź dziennik błędów wtyczki." },
+  "popupUnavailable": { "message": "Ustawienia niedostępne" },
+  "popupRetry": { "message": "Spróbuj ponownie" }
+}
